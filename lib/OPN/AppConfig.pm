@@ -1,8 +1,14 @@
-package Foo;
+package OPN::AppConfig;
 use Moose;
+use MooseX::NonMoose;
+extends 'AppConfig';
 
+sub load {
+    my $self = shift;
+    print "Load is called";
+}
 
-
+no Moose;
 
 __PACKAGE__->meta->make_immutable;
 
@@ -15,6 +21,12 @@ OPN::AppConfig - A AppConfig package
 =head1 DESCRIPTION
 
 =head1 SYNOPSIS
+
+=head1 METHODS
+
+=head2 load
+
+Load the configuration file and asserts its correctness
 
 =head1 AUTHOR
 
